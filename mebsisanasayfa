@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      position: absolute;
+      top: 0px;
+      font-family:main-font;
+      font-size: 20px;
+
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color:rgb(209, 217, 218);
+      opacity: 0.9;
+      display: inline-block;
+      color: rgb(26, 20, 119);
+      padding: 13px 150px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+
+    }
+
+    button:hover {
+      opacity: 0.5;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 30%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300x) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+
+    html {
+      background: url(data.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+
+   .content{
+     background: rgb(198, 218, 219);
+     width: 800px;
+     height: 400px;
+    position: absolute;
+    left: 10px;
+      top:580px;
+      
+    }
+    
+     #sidebar{
+       background: rgb(198, 218, 219);
+       border-radius: 3px solid  red;
+       font-weight: bold;
+       width: 600px;
+       height: 400px;
+       position: absolute;
+       top: 580px;
+       left: 910px;
+     }
+     footer{
+       background: rgb(198, 218, 219);
+       width: 1500px;
+       height: 150px;
+       position: absolute;
+       top: 1000px;
+
+     }
+     h1{
+      color: rgb(244, 244, 248);
+      background: url("header.jpg");
+      width: 1500px;
+      height: 500px;
+      border: 3px solid rgb(45, 182, 189);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      text-align: center;
+    }
+    .baslık{
+      width: 100px;
+      color: rgb(242, 238, 247);
+    }
+    p{
+      text-indent:40px ;
+
+    }
+    h3{
+      text-align: center;
+      border: 3px solid rgb(120, 122, 226);
+      background: rgb(120, 122, 226);
+      border-radius: 30px;
+      border-width: 3px;
+    }
+ 
+@keyframes myrule {
+    from {top: 0px;}
+    to {top: 300px;}
+}
+/* Supported by Safari 4.0 - 8.0, Opera  15.0*/
+@-webkit-keyframes myrule {
+    from {top: 0px;}
+    to {top: 300px;}
+}
+/*Supported by Firefox */
+@-moz-keyframes myrule {
+    from {top: 0px;}
+    to {top: 300px;}
+}
+/* Supported by opera 12.0*/
+@-o-keyframes myrule {
+    from {top: 0px;}
+    to {top: 300px;}
+}
+.testanimation {
+    height: 85px;
+    width: 85px;
+    left: 600px;
+
+    position :absolute;
+    -webkit-animation: myrule 10s infinite; /* For Safari 4.0 - 8.0 */
+    animation: myrule 10s infinite;
+}
+.site-footer {
+  background-color: #8787bd;
+	text-align: center;
+	margin: 10px 0;
+	padding: 10px 0;
+}
+
+#social-wrapper {
+	text-align: center;
+}
+
+/*Social Media Icons*/
+.social-wrapper {
+	text-align: center;
+}
+
+.social-wrapper ul li {
+	display: inline;
+	margin: 0 5px;
+}
+
+.twitter-icon,
+.facebook-icon,
+.instagram-icon,
+.googleplus-icon,
+.youtube-icon,
+.foursquare-icon{
+	margin-top: .625em;
+	width: 40px;
+	height: 40px;
+	opacity: .6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+  border-radius: 25px;
+}
+
+.twitter-icon:hover,
+.facebook-icon:hover,
+.instagram-icon:hover,
+.googleplus-icon:hover,
+.youtube-icon:hover,
+.foursquare-icon:hover {
+	opacity: 1.0;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.footer-nav p {
+	text-align: center;
+}
+#sidebar li{
+      overflow: hidden;
+       list-style-type: none;
+       background-color: rgb(93, 94, 206);
+       padding: 0px;
+       width: 500px;
+       height: 50px;
+       margin: 5px;
+       font-size: 20px;
+       font-family:Georgia, 'Times New Roman', Times, serif;
+       line-height: 50px;
+       float: left;
+     }
+     
+     #sidebar a{
+       padding-top: 6px;
+       margin: 0px;
+       text-decoration: none;
+       color: rgb(9, 38, 134);
+       display: block; /*a etiketinin etki alanını nesne boyutlarına eşitler*/  
+       text-align: center;
+       transition: 1s; 
+       
+     }
+     
+      #sidebar span{
+       display: block;
+       margin-top:-60px;
+     }
+     
+     #sidebar a:hover{
+      
+       color: white;
+       margin-top:55px;
+       
+       
+     } 
+
+
+
+  </style>
+</head>
+
+<body>
+    
+
+      <h1><div class="testanimation">
+        <p class="baslık"><b> MEBSİS</b></p>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><b>Üye Girişi</b></button></p>
+      </h1></div>
+   
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="graduate.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit"><b>Login</button></b>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="cancelbtn">Cancel</button>
+
+      </div>
+      <hr>
+    </form>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <div class="content">
+        <br><h3> MEBSİS Nedir? </h3>
+        <details>
+          <summary>Daha Fazlası..</summary>
+          <p>
+            <b>Özlem İSKENDER</b> <br>
+            <time>09.01.1998</time><br>
+
+          </p>
+        </details>
+        <p>
+           Mezun Bilgi Sistemi, Karadeniz Teknik Üniversitesi ailesini bir arada tutmak ve mezunlarımızın üniversite
+          ile ilişkilerini devam ettirmek amacı ile oluşturulmuştur. Bu sistem üzerinden okul arkadaşlarınızı
+          bulabilir. Yeni mezun olacak öğrencilerimiz için staj ve iş olanakları sağlayabilir veya iş olanaklarını
+          değerlendirebilirsiniz.
+        </p>
+      <section class="summary">
+        <p>
+          Mezun sistemi için giriş yapmanız gerekmektedir.
+        </p>
+        
+      </section>
+    </div>
+
+    </article>
+    <div id="sidebar">
+      <ul>
+           <li><a href="#"><span>Anasayfa</span>Anasayfa</a></li>
+           <li><a href="#"><span>Hakkımızda</span>Hakkımızda</a></li>
+           <li><a href="#"><span>Duyurular</span>Duyurular</a></li>
+           <li><a href="#"><span>Etkinlikler</span>Etkinlikler</a></li>
+           <li><a href="#"><span>İletişim</span>İletişim</a></li>
+
+      </ul>
+    </div>
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="social-wrapper">
+          <ul>
+            <li>
+              <a href="#" target="_blank">
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png" alt="Twitter Logo" class="twitter-icon"></a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="https://www.mchenryvillage.com/images/instagram-icon.png" alt="Instagram Logo" class="instagram-icon"></a>
+            </li>
+          
+            <li>
+              <a href="#" target="_blank">
+                <img src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico" alt="Facebook Logo" class="facebook-icon"></a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-plus-icon.png" alt="Googleplus Logo" class="googleplus-icon"></a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="https://lh3.googleusercontent.com/j_RwVcM9d47aBDW5DS1VkdxUYCkDUCB6wZglv4x-9SmsxO0VaFs7Csh-FmKRCWz9r_Ef=w170" alt="Youtube Logo" class="youtube-icon"></a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="http://www.iconarchive.com/download/i94258/designbolts/vector-foursquare/Foursquare-2.ico" alt="Foursquare Logo" class="foursquare-icon"></a>
+            </li>
+          </ul>
+        </div>
+      
+        <nav class="footer-nav" role="navigation">
+          <p>Copyright &copy; 2019-
+             All rights reserved.</p>
+        </nav>
+      </footer>
+
+
+</body>
+
+</html>
